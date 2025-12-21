@@ -10,8 +10,9 @@ import productRoutes from "./routes/productRoutes.js";
 dotenv.config();
 const app = express();
 console.log("ENV LOADED:", process.env.JWT_SECRET);
-app.use(cors());
+app.use(cors({ origin: "*" }));
 app.use(express.json());
+
 
 connectDB();
 
