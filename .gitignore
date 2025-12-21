@@ -1,0 +1,51 @@
+# --- Node ---
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# --- Environment Files ---
+.env
+.env.*
+!.env.example
+
+# --- Logs ---
+logs/
+*.log
+log*
+debug.log
+error.log
+combined.log
+
+# --- Build Outputs ---
+dist/
+build/
+coverage/
+.tmp/
+.temp/
+
+# --- Cache ---
+.cache/
+.nyc_output/
+.eslintcache
+.vscode/
+.idea/
+
+# --- TypeScript ---
+*.tsbuildinfo
+
+# --- OS Files ---
+.DS_Store
+Thumbs.db
+
+# --- Optional: Docker ---
+docker-data/
+
+# --- Optional: PM2 ---
+.pids/
+*.pid
+
+# --- Optional: Prisma ---
+prisma/dev.db
+prisma/dev.db-journal
