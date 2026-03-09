@@ -5,7 +5,7 @@ import authMiddleware from "../middleware/auth.js";
 const router = express.Router();
 
 router.get("/me", authMiddleware, getProfile);
-router.put("/update", authMiddleware, updateProfile);
+router.put("/update",  updateProfile);
 router.post("/address/add", authMiddleware, addAddress);
 
 // GET ALL ADDRESSES
