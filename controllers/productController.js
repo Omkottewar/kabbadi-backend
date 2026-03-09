@@ -41,7 +41,6 @@ export const getProductById = async (req, res) => {
       });
     }
 
-    // 3️⃣ Format variants cleanly
     const variants = data.product_variants.map(v => ({
       id: v.id,
       sku: v.sku,
@@ -49,10 +48,16 @@ export const getProductById = async (req, res) => {
       size: v.size,
       price: v.price,
       oldPrice: v.old_price,
-      image: v.image,
-      additionalImages: v.additional_images,
+
+      // 🔥 Merge single + multiple images
+      images: [
+        v.image,
+        ...(v.additional_images || [])
+      ].filter(Boolean),
+
       stock: v.inventory?.stock ?? 0
     }));
+
 
     // 4️⃣ Format final product response
     const finalProduct = {

@@ -5,7 +5,7 @@ import connectDB from "./config/db.js";
 import authRoutes from "./routes/authRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
 import storeRoutes from "./routes/storeRoutes.js";
-import productRoutes from "./routes/productRoutes.js";
+import matchRoutes from "./routes/MatchRoutes.js";
 
 dotenv.config();
 const app = express();
@@ -20,6 +20,6 @@ app.use("/auth", authRoutes);
 app.use("/user", userRoutes);
 app.use("/api/store", storeRoutes);
 app.use("/api/products", storeRoutes);
-
+app.use("/matches", matchRoutes);
 
 app.listen(5000, () => console.log("Server running on port 5000"));
